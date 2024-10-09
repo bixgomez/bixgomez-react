@@ -19,10 +19,10 @@ function Posts() {
   
   return (
     <div>
-      <h1>Latest Posts</h1>
+      <h1>All Posts</h1>
       <ul>
         {posts.map((post) => (
-          <li key={post.id}>{post.title.rendered}</li>
+          <li key={post.id} dangerouslySetInnerHTML={{ __html: post.title.rendered }}></li>
         ))}
       </ul>
     </div>
