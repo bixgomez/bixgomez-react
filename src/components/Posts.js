@@ -5,7 +5,8 @@ function Posts() {
 
   useEffect(() => {
     const fetchPosts = () => {
-      fetch('https://llanokidbooks.com/wp-json/wp/v2/posts')
+      const apiUrl = process.env.REACT_APP_API_URL + 'posts';
+      fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => setPosts(data))
         .catch((error) => console.error('Error fetching posts:', error));
